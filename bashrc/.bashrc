@@ -31,6 +31,5 @@ alias grep='grep --color'
 #. /usr/share/powerline/bindings/bash/powerline.sh
 
 ## Power State Aliases
-alias reboot='systemctl reboot'
 alias shutdown='systemctl poweroff'
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
