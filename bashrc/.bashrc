@@ -3,14 +3,24 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+## source scripts
+source /usr/share/bash-completion/bash_completion
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+## plugins
 shopt -s autocd
 shopt -s checkwinsize
+
+## History
+export HISTSIZE=100000
 export HISTCONTROL=ignoredups
-alias tb='tf && tensorboard --logdir .'
+
+## PS1
 export PS1="\[$(tput bold)\]\u@\h\[$(tput sgr0)\][\w]\[$(tput bold)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+## personal aliases
 alias gitpush='git add * && git commit -m "update" && git push'
+alias tb='tf && tensorboard --logdir .'
 alias rslab='ssh vythoulkas@147.102.106.69'
 alias pi='ssh pi@192.168.1.101'
 alias nvidia='optimus-manager --switch nvidia'
@@ -23,12 +33,9 @@ alias d='conda deactivate'
 alias ls='ls -hF --color=auto'
 alias ll='ls -l'
 alias la='ll -A'
-alias grep='grep --color'
-##### Powerline
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#. /usr/share/powerline/bindings/bash/powerline.sh
 
-## Power State Aliases
+## grep
+alias grep='grep --color'
+
+## minoconda
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
