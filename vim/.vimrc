@@ -27,3 +27,4 @@ colorscheme solarized
 syntax on
 filetype indent plugin on
 
+set clipboard=unnamedplus
