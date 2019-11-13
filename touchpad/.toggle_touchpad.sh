@@ -1,12 +1,11 @@
-export `xinput list | grep -i touchpad | awk '{ print $6 }'`
-TOUCH_ENABLED=`xinput list-props $id | grep Device\ Enabled | awk '{ print $4 }'`
-if [ $TOUCH_ENABLED = 0 ]; then
-        xinput set-prop $id "Device Enabled" 1
-	xinput set-prop $id "libinput Tapping Enabled" 1
-elif [ $TOUCH_ENABLED = 1 ]; then
-        xinput set-prop $id "Device Enabled" 0
+#! /bin/bash
+
+device="SynPS/2 Synaptics TouchPad"
+enabled=$(xinput --list-props "$device" | grep "Device Enabled" | awk '{print $NF}')
+
+if [[ "$enabled" == "1" ]]; then
+    xinput --disable "$device"
 else
-        echo "Could not get touchpad status from xinput"
-        exit 1
+    xinput --enable "$device"
+    xinput set-prop $id "libinput Tapping Enabled" 1
 fi
-exit 0
