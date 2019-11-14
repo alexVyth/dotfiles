@@ -22,6 +22,7 @@ alias nvidia='optimus-manager --switch nvidia'
 alias intel='optimus-manager --switch intel'
 alias hybrid='optimus-manager --switch hybrid'
 alias tf='conda activate tf'
+alias hibernate='systemctl hibernate'
 alias d='conda deactivate'
 
 ## ls
