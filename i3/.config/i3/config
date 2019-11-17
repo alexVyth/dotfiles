@@ -187,7 +187,7 @@ assign [class="Signal"] $ws3
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id feh --bg-scale /home/alex/Pictures/red.jpg
-exec --no-startup-id compton 
+exec --no-startup-id picom 
 exec --no-startup-id numlockx
 exec --no-startup-id chromium
 exec --no-startup-id urxvt
