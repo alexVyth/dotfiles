@@ -97,22 +97,27 @@ plugins=(git)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH=/home/alex/.local/bin:$PATH
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-source $ZSH/oh-my-zsh.sh
-## minoconda
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
 alias gitpush='git add * && git commit -m "update" && git push'
 alias tb='tf && tensorboard --logdir .'
 alias rslab='ssh vythoulkas@147.102.106.69'
 alias pi='ssh pi@192.168.1.101'
-alias nvidia='optimus-manager --switch nvidia'
-alias intel='optimus-manager --switch intel'
-alias hybrid='optimus-manager --switch hybrid'
 alias tf='conda activate tf'
 alias d='conda deactivate'
 alias hibernate='systemctl hibernate'
+alias lab='jupyter lab'
+
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
+source $ZSH/oh-my-zsh.sh
+## minoconda
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
