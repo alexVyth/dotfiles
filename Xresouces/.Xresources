@@ -9,7 +9,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*scrollBar: false
-URxvt*fading:  30
+!URxvt*fading:  30
 !Xterm escapes, word by word movement
 URxvt.keysym.Control-Left:    \033[1;5D
 URxvt.keysym.Control-Right:    \033[1;5C
@@ -52,9 +52,9 @@ URxvt.keysym.Control-Right:    \033[1;5C
 #define S_green         #859900
 
 *background:            S_base03
-URxvt.background:	[70]S_base03
+URxvt.background:	[80]S_base03
 *foreground:            S_base00
-*fading:                40
+!*fading:                40
 *fadeColor:             S_base03
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
