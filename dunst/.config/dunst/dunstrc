@@ -1,9 +1,9 @@
 [global]
-<<<<<<< HEAD
+#<<<<<<< HEAD
     font = tewi 8
-=======
+#=======
     font = Fixed 9
->>>>>>> Minimal_Dark_Rice
+#>>>>>>> Minimal_Dark_Rice
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -68,11 +68,11 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-<<<<<<< HEAD
+#<<<<<<< HEAD
     geometry = "300x5-16+25"
-=======
+#=======
     geometry = "300x5-8+30"
->>>>>>> Minimal_Dark_Rice
+#>>>>>>> Minimal_Dark_Rice
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.

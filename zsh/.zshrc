@@ -112,9 +112,14 @@ alias pi='ssh pi@192.168.1.101'
 alias tf='conda activate tf'
 alias d='conda deactivate'
 alias hibernate='systemctl hibernate'
-alias 'suspend'='systemctl suspend'
+alias susp='systemctl suspend'
 alias lab='jupyter lab'
-alias mpv='prime mpv'
+alias mpv='prime-run mpv'
+alias R='R --quiet'
+alias vim='nvim'
+
+XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx -- -keeptty > ~/.xorg.log 2>&1
@@ -122,3 +127,5 @@ fi
 source $ZSH/oh-my-zsh.sh
 ## minoconda
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+unsetopt PROMPT_SP
