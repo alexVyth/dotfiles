@@ -1,1 +1,1 @@
-# Dotfiles for gnow stow
+.dotfiles for gnu stow
