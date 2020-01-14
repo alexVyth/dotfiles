@@ -105,7 +105,6 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-alias gitpush='git add . && git commit -m "update" && git push'
 alias tb='tf && tensorboard --logdir .'
 alias rslab='ssh vythoulkas@147.102.106.69'
 alias pi='ssh pi@192.168.1.101'
@@ -158,3 +157,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+
+# bspwm completion
+fpath=(~/.config/bspwm/ $fpath)
