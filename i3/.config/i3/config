@@ -46,6 +46,8 @@ exec_always --no-startup-id setxkbmap us,gr -option 'grp:caps_toggle'
 bindsym XF86TouchpadToggle exec --no-startup-id $HOME/.toggle_touchpad.sh
 exec --no-startup-id $HOME/.toggle_touchpad.sh
 
+bindsym XF86MonBrightnessUp exec --no-startup-id light -s sysfs/backlight/intel_backlight -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/intel_backlight -U 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 #floating_modifier $mod
@@ -63,23 +65,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -164,10 +154,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -185,7 +171,7 @@ assign [class="Chromium"] $ws2
 assign [class="Signal"] $ws3
 # Polybar autostart
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale /home/alex/.wp.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/.wp.jpg
 exec --no-startup-id picom 
 exec --no-startup-id chromium
 exec --no-startup-id urxvt

@@ -1,5 +1,5 @@
 [credential]
-	helper = cache --timeout=999999999
+	helper = cache --timeout=999999999999999999999
 [user]
-	email = alvythoulkas@gmail.com
+	email = alvythoulkas@protonmail.com
 	name = Alexandros Vythoulkas

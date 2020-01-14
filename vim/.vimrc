@@ -19,7 +19,7 @@ runtime! archlinux.vim
 " do not load defaults if ~/.vimrc is missing
 "let skip_defaults_vim=1
 " This line makes pacman-installed global Arch Linux vim packages work.
-
+let g:airline_powerline_fonts = 1
 set number
 let g:solarized_termtrans=1
 syntax enable

@@ -1,5 +1,10 @@
-URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true, xft: Inconsolata for Powerline: pixelsize=11
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true, xft: Inconsolata for Powerline: pixelsize=11
+URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true,  xft:Inconsolata\ for\ Powerline:pixelsize=20
+
+!URxvt.font:     xft:Inconsolata\ for\ Powerline:pixelsize=20
+!URxvt*font: xft:Terminess Powerline:size=12
+!urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
+!URxvt.font: xft:Inconsolata\ for\ Powerline:pixelsize=20
+!URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true, xft: Inconsolata for Powerline: pixelsize=11
 URxvt.depth:		32
 URxvt.perl-ext-common: 	clipboard
 URxvt.clipboard.autocopy: true
@@ -52,7 +57,7 @@ URxvt.keysym.Control-Right:    \033[1;5C
 #define S_green         #859900
 
 *background:            S_base03
-URxvt.background:	[80]S_base03
+!URxvt.background:	[80]S_base03
 *foreground:            S_base00
 !*fading:                40
 *fadeColor:             S_base03
