@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9 
+font pango:monospace 9
 
 # Disable TitleBars
 for_window [class=".*"] border pixel 0
@@ -111,7 +111,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1 
+bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
@@ -172,7 +172,7 @@ assign [class="Signal"] $ws3
 # Polybar autostart
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale $HOME/.wp.jpg
-exec --no-startup-id picom 
+exec --no-startup-id picom
 exec --no-startup-id chromium
 exec --no-startup-id urxvt
 exec --no-startup-id urxvt

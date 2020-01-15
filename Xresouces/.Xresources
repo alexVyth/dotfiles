@@ -1,10 +1,10 @@
-URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true,  xft:Inconsolata\ for\ Powerline:pixelsize=20
+URxvt.font:     xft:bitstream\ vera\ sans\ mono:size=12,xft:Inconsolata\ for\ Powerline:size=12
+URxvt.boldFont:     xft:bitstream\ vera\ sans\ mono:bold:size=12,xft:Inconsolata\ for\ Powerline:size=12
+URxvt.italicFont:     xft:bitstream\ vera\ sans\ mono:italic:size=12,xft:Inconsolata\ for\ Powerline:size=12
+! disable ctrl-shift
+URxvt*iso14755_52: false
+URxvt*iso14755: false
 
-!URxvt.font:     xft:Inconsolata\ for\ Powerline:pixelsize=20
-!URxvt*font: xft:Terminess Powerline:size=12
-!urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
-!URxvt.font: xft:Inconsolata\ for\ Powerline:pixelsize=20
-!URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true, xft: Inconsolata for Powerline: pixelsize=11
 URxvt.depth:		32
 URxvt.perl-ext-common: 	clipboard
 URxvt.clipboard.autocopy: true

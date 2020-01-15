@@ -117,6 +117,7 @@ alias mpv='prime-run mpv'
 alias R='R --quiet'
 alias vim='nvim'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias y='yay -Syu'
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx -- -keeptty > ~/.xorg.log 2>&1

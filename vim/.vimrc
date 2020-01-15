@@ -20,11 +20,12 @@ runtime! archlinux.vim
 "let skip_defaults_vim=1
 " This line makes pacman-installed global Arch Linux vim packages work.
 let g:airline_powerline_fonts = 1
+set encoding=utf-8
+
 set number
-let g:solarized_termtrans=1
-syntax enable
-set background=dark
 colorscheme solarized
+let g:airline_solarized_bg='dark'
+syntax enable
 syntax on
 filetype indent plugin on
 set clipboard=unnamedplus
@@ -33,4 +34,3 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 imap ii <Esc>
-
