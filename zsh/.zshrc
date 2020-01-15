@@ -97,7 +97,7 @@ plugins=(git vi-mode)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=/home/alex/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
