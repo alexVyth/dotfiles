@@ -15,11 +15,11 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	light -s sysfs/backlight/intel_backlight -U 5
 
-Print 
+alt + Print 
 	scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 
-shift + Print 
+alt + p
 	scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 #
@@ -71,7 +71,7 @@ alt + q
 #
 
 # set the window state
-alt + {t,Shift + t,s}
+alt + {t,shift + t,s}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
 alt + f
