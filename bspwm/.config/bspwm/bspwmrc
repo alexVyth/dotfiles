@@ -1,6 +1,5 @@
 #! /bin/zsh
 
-
 bspc rule -r "*"
 bspc rule -a Chromium desktop=Browser focus=off follow=off border=off
 bspc rule -a Signal desktop=Messaging focus=off follow=off state=tiled
