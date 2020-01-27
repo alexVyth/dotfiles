@@ -16,11 +16,11 @@ XF86MonBrightnessDown
 	light -s sysfs/backlight/intel_backlight -U 5
 
 Print 
-	scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+	scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screen
 
 
 alt + Print
-	scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+	scrot -a $(slop -f '%x,%y,%w,%h')'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 #
 # wm independent hotkeys
@@ -149,5 +149,5 @@ alt + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-alt + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+#alt + {Left,Down,Up,Right}
+	#bspc node -v {-20 0,0 20,0 -20,20 0}

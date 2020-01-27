@@ -1,8 +1,10 @@
 #! /bin/zsh
 
 bspc rule -r "*"
-bspc rule -a Chromium desktop=Browser focus=off follow=off border=off
-bspc rule -a Signal desktop=Messaging focus=off follow=off state=tiled
+bspc rule -a Chromium desktop=Browser follow=off
+bspc rule -a firefox desktop=Browser follow=off
+bspc rule -a qutebrowser desktop=Browser follow=off
+bspc rule -a Signal desktop=Messaging follow=off state=tiled
 bspc rule -a ViberPC desktop=Messaging focus=off follow=off
 bspc rule -a Lutris desktop=Gaming follow=on
 bspc rule -a Thunar desktop=Others follow=on
@@ -34,6 +36,9 @@ fi
 dunst &
 
 bspc monitor $mainmonitor -d Terminals Browser Messaging Others Gaming
+
+bspc config ignore_ewmh_focus true
+#bspc config ignore_ewmh_fullscreen all
 
 bspc config border_width         4
 bspc config window_gap          15

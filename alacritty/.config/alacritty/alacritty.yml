@@ -6,13 +6,13 @@ window:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Source Code Pro Medium
+    family: Source Code Pro
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Source Code Pro Black
+    family: Source Code Pro
     # Style can be specified to pick a specific face.
     style: Black
 
@@ -21,9 +21,13 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
   # The italic font face
-  size: 8
+  size: 7.5
 draw_bold_text_with_bright_colors: false
 
+#visual_bell:
+    #animation: Ease
+    #duration: 250
+    #color: '0xdc322f'
 # Colors (Solarized Dark)
 colors:
   # Default colors
