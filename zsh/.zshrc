@@ -89,6 +89,7 @@ plugins=(vi-mode)
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export PATH=~/.local/bin:$PATH
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -98,39 +99,25 @@ plugins=(vi-mode)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=~/.local/bin:$PATH
-export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-alias tb='tf && tensorboard --logdir .'
-alias rslab='ssh vythoulkas@147.102.106.69'
 alias pi='ssh pi@192.168.1.101'
-alias tf='conda activate tf'
-alias d='conda deactivate'
 alias hibernate='systemctl hibernate'
-alias susp='systemctl suspend'
-alias lab='jupyter lab'
 alias mpv='prime-run mpv'
 alias R='R --quiet'
 alias vim='nvim'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias y='yay -Syu'
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx -- -keeptty > ~/.xorg.log 2>&1
 fi
 source $ZSH/oh-my-zsh.sh
-## minoconda
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 unsetopt PROMPT_SP
 
-XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CONFIG_HOME
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
