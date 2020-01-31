@@ -1,15 +1,18 @@
 #! /bin/zsh
 
 bspc rule -r "*"
-bspc rule -a Chromium desktop=Browser follow=off
-bspc rule -a firefox desktop=Browser follow=off
-bspc rule -a qutebrowser desktop=Browser follow=off
-bspc rule -a Signal desktop=Messaging follow=off state=tiled
-bspc rule -a ViberPC desktop=Messaging focus=off follow=off
-bspc rule -a Lutris desktop=Gaming follow=on
-bspc rule -a Thunar desktop=Others follow=on
-bspc rule -a qBittorrent desktop=Others follow=on
-bspc rule -a libreoffice-startcenter desktop=Others follow=on
+bspc rule -a Chromium desktop='^2' follow=off
+bspc rule -a firefox desktop='^2' follow=off
+bspc rule -a qutebrowser desktop='^2' follow=off
+
+bspc rule -a Signal desktop='^3' follow=off state=tiled
+bspc rule -a ViberPC desktop='^3' focus=off follow=off
+
+bspc rule -a qBittorrent desktop='^4' follow=on
+bspc rule -a Thunar desktop='^4' follow=on
+bspc rule -a libreoffice-startcenter desktop='^4' follow=on
+
+bspc rule -a Lutris desktop='^5' follow=on
 bspc rule -a Zathura state=tiled
 
 mainmonitor="$(bspc query --monitors --names | grep -v LVDS | head -n 1)"
@@ -32,10 +35,11 @@ if ! pgrep -u $UID -x dunst >/dev/null; then
 	signal-desktop &
 	i3-battery-popup -n &
 	xsetroot -cursor_name left_ptr &
+	mopidy &
 fi
 dunst &
 
-bspc monitor $mainmonitor -d Terminals Browser Messaging Others Gaming
+bspc monitor $mainmonitor -d I II III IV V VI VII VIII IX X
 
 bspc config ignore_ewmh_focus true
 #bspc config ignore_ewmh_fullscreen all

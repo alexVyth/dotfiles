@@ -19,6 +19,7 @@ set encoding=utf-8
 
 set number
 colorscheme solarized
+set background=dark
 filetype indent plugin on
 set clipboard=unnamedplus
 

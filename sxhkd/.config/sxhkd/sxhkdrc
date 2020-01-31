@@ -10,15 +10,15 @@ XF86AudioMute
 XF86TouchpadToggle
 	$HOME/.toggle_touchpad.sh
 
-XF86MonBrightnessUp 
-	xbacklight -inc 5
-XF86MonBrightnessDown
-	xbacklight -dec 5
-
 #XF86MonBrightnessUp 
-	#light -s sysfs/backlight/intel_backlight -A 5
+	#xbacklight -inc 5
 #XF86MonBrightnessDown
-	#light -s sysfs/backlight/intel_backlight -U 5
+	#xbacklight -dec 5
+
+XF86MonBrightnessUp
+	light -s sysfs/backlight/intel_backlight -A 5
+XF86MonBrightnessDown
+	light -s sysfs/backlight/intel_backlight -U 5
 
 Print 
 	scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screen
@@ -27,6 +27,12 @@ Print
 alt + Print
 	scrot -a $(slop -f '%x,%y,%w,%h')'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
+
+alt + shift + s
+	mpc -q toggle
+
+alt + shift + {p, n}
+	mpc -q {prev, next}
 #
 # wm independent hotkeys
 #
