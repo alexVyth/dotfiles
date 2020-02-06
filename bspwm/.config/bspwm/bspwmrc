@@ -12,7 +12,7 @@ bspc rule -a qBittorrent desktop='^4' follow=on
 bspc rule -a Thunar desktop='^4' follow=on
 bspc rule -a libreoffice-startcenter desktop='^4' follow=on
 
-bspc rule -a Lutris desktop='^5' follow=on
+bspc rule -a Lutris desktop='^4' follow=on
 bspc rule -a Zathura state=tiled
 
 mainmonitor="$(bspc query --monitors --names | grep -v LVDS | head -n 1)"
@@ -30,8 +30,8 @@ if ! pgrep -u $UID -x dunst >/dev/null; then
 	setxkbmap us,gr -option 'grp:caps_toggle' &
 	$HOME/.toggle_touchpad.sh &
 	chromium &
-	alacritty &
-	alacritty &
+	urxvt &
+	urxvt &
 	signal-desktop &
 	i3-battery-popup -n &
 	xsetroot -cursor_name left_ptr &
