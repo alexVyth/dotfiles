@@ -1,8 +1,8 @@
 # laptop functions
 XF86AudioRaiseVolume 
-	pactl set-sink-volume @DEFAULT_SINK@ +10%
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume 
-	pactl set-sink-volume @DEFAULT_SINK@ -10%
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute 
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 #XF86AudioMicMute 
@@ -27,6 +27,12 @@ Print
 alt + Print
 	scrot -a $(slop -f '%x,%y,%w,%h')'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
+
+#alt + shift + s
+##	playerctl play-pause
+#       
+#alt + shift + {p, n}
+#	playerctl {previous, next}
 
 alt + shift + s
 	mpc -q toggle
@@ -66,8 +72,8 @@ alt + shift + r
 alt + q
 	bspc node -c
 # alternate between the tiled and monocle layout
-#alt + m
-	#bspc desktop -l next
+alt + m
+	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 #alt + y
@@ -125,7 +131,7 @@ alt + {o,i}
 
 # focus or send to the given desktop
 alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '{1-9,0}'
 
 #
 # preselect

@@ -10,7 +10,6 @@ ZSH=/usr/share/oh-my-zsh/
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -43,7 +42,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -69,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode)
+plugins=(vi-mode colorize colored-man-pages)
 
 
 # User configuration
@@ -90,30 +89,25 @@ plugins=(vi-mode)
 # export ARCHFLAGS="-arch x86_64"
 
 export PATH=~/.local/bin:$PATH
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
+alias vpn-ntua-on='sudo systemctl start openvpn-client@ntua.service'
+alias vpn-ntua-off='sudo systemctl stop openvpn-client@ntua.service'
+alias grnet='ssh gealexdl@login.aris.grnet.gr'
+alias bigdata='ssh user@83.212.77.119'
+alias parml='ssh parml03@orion.cslab.ece.ntua.gr'
 alias pi='ssh pi@192.168.1.101'
 alias hibernate='systemctl hibernate'
-alias mpv='prime-run mpv'
 alias R='R --quiet'
 alias vim='nvim'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias noblank='xset s off -dpms'
+alias vless='/usr/share/nvim/runtime/macros/less.sh'
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx -- -keeptty > ~/.xorg.log 2>&1
-fi
 source $ZSH/oh-my-zsh.sh
 
 unsetopt PROMPT_SP
@@ -149,5 +143,6 @@ bindkey -v '^?' backward-delete-char
 
 
 fpath=(~/.zsh/functions $fpath)
-autoload -Uz compinit
-compinit -u
+
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+export CUDA_HOME=/opt/cuda
