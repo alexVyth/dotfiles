@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bspc wm -r
+bspc monitor -g 1280x768+0+0

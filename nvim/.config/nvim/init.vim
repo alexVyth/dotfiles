@@ -1,24 +1,21 @@
 "vim-plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'neomake/neomake'
-Plug 'tmhedberg/SimpylFold'
-Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'valloric/youcompleteme'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
-Plug 'ap/vim-css-color'
 call plug#end()"
 
 "general
 syntax on
 set number
 set clipboard+=unnamedplus
-let g:deoplete#enable_at_startup=1
-call neomake#configure#automake('nrwi')
 
 "theming
 let g:gruvbox_italic=1
@@ -57,4 +54,22 @@ au BufNewFile,BufRead *.py
 autocmd FileType tex setlocal spell spelllang=el,en_us
 
 "greek
-set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
+set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz,ςw
+
+"mouse
+set mouse=a
+
+nmap <leader>gs :G<CR>
+
+"vimtex
+let g:tex_flavor = 'latex'
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"tmux color fix
