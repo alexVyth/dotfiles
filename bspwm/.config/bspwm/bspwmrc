@@ -21,31 +21,38 @@ bspc rule -a firefox desktop='2' follow=off
 bspc rule -a qutebrowser desktop='2' follow=off
 bspc rule -a Signal desktop='3' follow=off state=tiled
 bspc rule -a ViberPC desktop='3' focus=off follow=off
+bspc rule -a Slack desktop='4' focus=off follow=off
+bspc rule -a Skype desktop='4' focus=off follow=off
+bspc rule -a ViberPC desktop='3' focus=off follow=off
 bspc rule -a qBittorrent desktop='4' follow=on
 bspc rule -a Thunar desktop='4' follow=on
 bspc rule -a libreoffice-startcenter desktop='4' follow=on
 bspc rule -a Lutris desktop='4' follow=on
 bspc rule -a Zathura state=tiled
-bspc rule -a Joplin desktop='9' follow=on
+bspc rule -a joplin desktop='9' follow=off state=tiled
+bspc rule -a calcurse desktop='9' follow=off state=tiled
+bspc rule -a ncmpcpp desktop='0' follow=off state=tiled
 
 # Startup
-feh --bg-scale $HOME/.wp.jpg &
 $HOME/.config/polybar/launch.sh &
-pkill picom
-picom &
 if ! pgrep -u $UID -x dunst >/dev/null; then
-        numlockx &
-        xgamma -quiet -rgamma 0.90 -ggamma 0.90 -bgamma 0.90 &
-        sxhkd &
-        setxkbmap us,gr -option 'grp:caps_toggle' &
-        $HOME/.toggle_touchpad.sh &
-        chromium &
-        urxvt &
-        urxvt &
-        signal-desktop &
-        viber &
-        joplin-desktop &
-        xsetroot -cursor_name left_ptr &
-        joystickwake &
+    picom &
+    feh --bg-scale $HOME/.wp.jpg &
+    numlockx &
+    xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85 &
+    sxhkd &
+    setxkbmap us,gr -option 'grp:caps_toggle' &
+    $HOME/.toggle_touchpad.sh &
+    xsetroot -cursor_name left_ptr &
+    joystickwake &
+    signal-desktop &
+    gtk-launch ncmpcpp &
+    termite &
+    termite &
+    chromium &
+    sleep 5
+    viber &
+    mopidy &
 fi
+autorandr --change
 dunst &
