@@ -16,6 +16,9 @@ Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-eunuch'
+Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()"
@@ -151,3 +154,6 @@ au BufNewFile,BufRead *.tex setlocal spell spelllang=el,en_us
 
 "resize vim windows on host resize
 au VimResized * wincmd =
+
+"indentation guides
+let g:indentLine_char='▏'
