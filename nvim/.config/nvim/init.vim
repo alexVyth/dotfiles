@@ -5,11 +5,9 @@ Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'psf/black'
-Plug 'fisadev/vim-isort'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
@@ -20,6 +18,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 call plug#end()"
 
@@ -47,7 +47,8 @@ set mouse=a
 set cmdheight=1
 set wildmode=longest:full,full
 set wildmenu
-let g:python3_host_prog  = '/usr/bin/python'
+set scrolloff=1
+let g:python3_host_prog  = '/usr/bin/python3'
 let g:gruvbox_plugin_hi_groups = 1
 let g:gruvbox_filetype_hi_groups = 1
 au! BufWritePost $MYVIMRC source %
@@ -74,7 +75,6 @@ nnoremap <Space>7 :7b<CR>
 nnoremap <Space>8 :8b<CR>
 nnoremap <Space>9 :9b<CR>
 nnoremap <Space>0 :10b<CR>
-nnoremap <F2> :Isort<CR>:Black<CR>
 nnoremap gb :Buffers<CR>
 
 "airline
@@ -82,10 +82,6 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
-
-"black
-let g:black_linelength = 79
-let g:black_skip_string_normalization = 1
 
 "colorizer
 lua require'colorizer'.setup()

@@ -1,14 +1,12 @@
 {
-    "python.jediEnabled": true,
-    "python.jediMemoryLimit": 4096,
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": ["--max-line-length=79"],
+    "python.linting.pylintArgs": ["--max-line-length=99"],
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": ["--max-line-length=79"],
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs":["--line-length", "79"],
-    "latex.forwardSearch.executable": "zathura",
-    "latex.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
-    "latex.build.onSave": true
+    "python.linting.flake8Args": ["--max-line-length=99"],
+    "python.formatting.blackArgs":["--line-length", "99"],
+    "python.sortImports.path": "isort",
+    "texlab.forwardSearch.executable": "zathura",
+    "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
+    "texlab.build.onSave": true
 }

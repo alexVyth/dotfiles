@@ -79,4 +79,4 @@ env:
 scrolling:
   history: 100000
 key_bindings:
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: T,   mods: Control|Shift, action: SpawnNewInstance }
