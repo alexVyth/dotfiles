@@ -79,6 +79,8 @@ bindsym $mod+p exec --no-startup-id bwmenu --auto-lock -1 -c 15
 
 bindsym XF86MonBrightnessUp exec --no-startup-id light -s sysfs/backlight/intel_backlight -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/intel_backlight -U 5
+bindsym mod4+equal exec --no-startup-id light -s sysfs/backlight/intel_backlight -A 5
+bindsym mod4+minus exec --no-startup-id light -s sysfs/backlight/intel_backlight -U 5
 
 bindsym Print exec --no-startup-id scrot '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 bindsym Shift+Print exec --no-startup-id "scrot -a $(slop -f '%x,%y,%w,%h') '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'"
@@ -89,6 +91,7 @@ bindsym $mod+shift+p exec --no-startup-id playerctl previous
 
 bindsym control+shift+space exec --no-startup-id dunstctl close
 bindsym control+grave exec --no-startup-id dunstctl history-pop
+bindsym --release Mod4+l exec --no-startup-id slock
 
 # wm colors
 set $red #cc241d
@@ -116,15 +119,10 @@ mode "resize" {
 
 
 # window rules
-assign [class="Chromium"] 2
 assign [class="Google-chrome"] 2
 assign [class="Signal"] 3
 assign [class="ViberPC"] 3
 assign [class="Slack"] 4
-assign [class="Skype"] 4
-assign [class="qBittorrent"] 4
-assign [class="Lutris"] 4
-assign [instance="ncmpcpp"] 10
 
 # autostart
 exec_always --no-startup-id autorandr --change
@@ -139,5 +137,6 @@ exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id alacritty'
 exec --no-startup-id picom
 exec --no-startup-id numlockx
 exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
-exec --no-startup-id google-chrome-stable
+exec --no-startup-id $HOME/.toggle_touchpad.sh
+exec --no-startup-id google-chrome
 exec --no-startup-id signal-desktop

@@ -1,2 +1,5 @@
 error.log
 plugged
+nvim/.config/nvim/.netrwhist
+autorandr/.config/autorandr/*/config
+autorandr/.config/autorandr/*/setup

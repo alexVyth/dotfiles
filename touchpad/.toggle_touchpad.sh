@@ -7,4 +7,5 @@ if [[ "$enabled" == "1" ]]; then
     xinput --disable "$device"
 else
     xinput --enable "$device"
+    xinput set-prop "$device" "libinput Tapping Enabled" 1
 fi

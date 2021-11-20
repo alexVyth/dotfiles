@@ -1,6 +1,6 @@
 "vim-plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -14,12 +14,14 @@ Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-eunuch'
-Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'yuezk/vim-js'
+Plug 'leafgarland/typescript-vim'
+
 
 call plug#end()"
 
@@ -39,7 +41,7 @@ set smartindent
 set expandtab
 set nobackup
 set nowritebackup
-set updatetime=300
+set updatetime=100
 set showtabline=2
 set signcolumn=yes
 set shortmess+=c
@@ -48,6 +50,7 @@ set cmdheight=1
 set wildmode=longest:full,full
 set wildmenu
 set scrolloff=1
+let g:netrw_fastbrowse = 0
 let g:python3_host_prog  = '/usr/bin/python3'
 let g:gruvbox_plugin_hi_groups = 1
 let g:gruvbox_filetype_hi_groups = 1
@@ -143,6 +146,11 @@ au CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 "spell on tex
 let g:tex_flavor = "latex"
 au FileType tex setlocal spell spelllang=el,en_us
@@ -153,3 +161,14 @@ au VimResized * wincmd =
 
 "indentation guides
 let g:indentLine_char='▏'
+
+" tsconfig.json is actually jsonc, help TypeScript set the correct filetype
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" TypeScript key bindings
+nmap <F2> :Prettier<cr>
+nmap <Space>f :GFiles<cr>
+nmap <Space>t :CocCommand explorer<cr>
