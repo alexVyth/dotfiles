@@ -59,7 +59,7 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 
-bindsym $mod+Return exec  --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec  --no-startup-id alacritty
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -86,6 +86,9 @@ bindsym Shift+Print exec --no-startup-id "scrot -a $(slop -f '%x,%y,%w,%h') '%Y-
 bindsym $mod+shift+s exec --no-startup-id playerctl play-pause
 bindsym $mod+shift+n exec --no-startup-id playerctl next
 bindsym $mod+shift+p exec --no-startup-id playerctl previous
+
+bindsym control+shift+space exec --no-startup-id dunstctl close
+bindsym control+grave exec --no-startup-id dunstctl history-pop
 
 # wm colors
 set $red #cc241d
@@ -114,12 +117,13 @@ mode "resize" {
 
 # window rules
 assign [class="Chromium"] 2
+assign [class="Google-chrome"] 2
 assign [class="Signal"] 3
 assign [class="ViberPC"] 3
 assign [class="Slack"] 4
 assign [class="Skype"] 4
-assign [class="qBittorrent"] 9
-assign [class="Lutris"] 9
+assign [class="qBittorrent"] 4
+assign [class="Lutris"] 4
 assign [instance="ncmpcpp"] 10
 
 # autostart
@@ -135,10 +139,5 @@ exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id alacritty'
 exec --no-startup-id picom
 exec --no-startup-id numlockx
 exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
-exec --no-startup-id $HOME/.toggle_touchpad.sh
-exec --no-startup-id joystickwake
-exec --no-startup-id mopidy
-exec --no-startup-id gtk-launch ncmpcpp
-exec --no-startup-id chromium
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id signal-desktop
-exec --no-startup-id sleep 5; viber
