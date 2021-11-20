@@ -138,5 +138,5 @@ exec --no-startup-id picom
 exec --no-startup-id numlockx
 exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
 exec --no-startup-id $HOME/.toggle_touchpad.sh
-exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id signal-desktop
