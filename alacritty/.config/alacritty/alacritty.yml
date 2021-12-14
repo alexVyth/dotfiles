@@ -80,4 +80,4 @@ scrolling:
   history: 100000
 key_bindings:
   - { key: T,   mods: Control|Shift, action: SpawnNewInstance }
-  - { key: F,   mods: Control, action: ToggleViMode }
+  - { key: F,   mods: Control, action: ToggleViMode}

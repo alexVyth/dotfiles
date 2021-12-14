@@ -9,7 +9,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
+Plug 'pwntester/octo.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/gv.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'chrisbra/csv.vim'
@@ -51,7 +55,6 @@ set wildmode=longest:full,full
 set wildmenu
 set scrolloff=1
 let g:netrw_fastbrowse = 0
-let g:python3_host_prog  = '/usr/bin/python3'
 let g:gruvbox_plugin_hi_groups = 1
 let g:gruvbox_filetype_hi_groups = 1
 au! BufWritePost $MYVIMRC source %
