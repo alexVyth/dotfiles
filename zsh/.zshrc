@@ -8,7 +8,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="false"
 
-plugins=(vi-mode fzf poetry)
+plugins=(vi-mode fzf poetry docker docker-compose dotenv gcloud
+        gh kubectl mongocli pip autojump last-working-dir)
 
 export PATH=~/.local/bin:$PATH
 export FZF_BASE=/usr/bin/fzf
