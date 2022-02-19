@@ -140,3 +140,6 @@ exec --no-startup-id xgamma -quiet -rgamma 0.85 -ggamma 0.85 -bgamma 0.85
 exec --no-startup-id $HOME/.toggle_touchpad.sh
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id signal-desktop
+exec --no-startup-id redshift-gtk
+exec --no-startup-id i3-gnome-pomodoro daemon
+exec --no-startup-id kdeconnect-indicator

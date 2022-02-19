@@ -53,3 +53,9 @@ fpath+=~/.zsh/functions
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PSQL_PAGER="pspg"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+alias pomo="i3-gnome-pomodoro"
