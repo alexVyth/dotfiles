@@ -313,10 +313,7 @@ handle_mime() {
 
         ## DjVu
         image/vnd.djvu)
-            ## Preview as text conversion (requires djvulibre)
-            djvutxt "${FILE_PATH}" | fmt -w "${PV_WIDTH}" && exit 5
-            exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 0;;
 
         ## Image
         image/*)

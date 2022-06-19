@@ -39,12 +39,12 @@ set smartindent
 set expandtab
 set nobackup
 set nowritebackup
-set updatetime=100
+set updatetime=300
 set showtabline=2
-set signcolumn=yes
+set signcolumn=number
 set shortmess+=c
 set mouse=a
-set cmdheight=1
+set cmdheight=2
 set wildmode=longest:full,full
 set wildmenu
 set scrolloff=1
@@ -106,6 +106,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin

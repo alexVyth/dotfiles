@@ -9,7 +9,7 @@ DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="false"
 
 plugins=(vi-mode fzf poetry docker docker-compose dotenv gcloud
-        gh kubectl mongocli pip autojump last-working-dir)
+        gh kubectl mongocli pip autojump)
 
 export PATH=~/.local/bin:$PATH
 export FZF_BASE=/usr/bin/fzf
@@ -59,3 +59,4 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 alias pomo="i3-gnome-pomodoro"
+source /etc/profile.d/google-cloud-sdk.sh
