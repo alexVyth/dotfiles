@@ -1,7 +1,7 @@
 "vim-plug
 call plug#begin('~/.config/nvim/plugged')
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -10,21 +10,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'pwntester/octo.nvim'
+Plug 'tpope/vim-eunuch'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tpope/vim-rhubarb'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'junegunn/gv.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'chrisbra/csv.vim'
-Plug 'tpope/vim-eunuch'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'yuezk/vim-js'
-Plug 'leafgarland/typescript-vim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 
 call plug#end()"
@@ -32,7 +26,7 @@ call plug#end()"
 "general
 set termguicolors
 set background=dark
-colorscheme gruvbox8
+colorscheme gruvbox
 set noshowmode
 set clipboard+=unnamedplus
 set cursorline
@@ -173,5 +167,24 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " TypeScript key bindings
 nmap <F2> :Prettier<cr>
-nmap <Space>f :GFiles<cr>
 nmap <Space>t :CocCommand explorer<cr>
+
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "bash", "css", "html", "javascript", "json", "jsonc", "python", "toml", "typescript", "vim", "yaml" },
+  sync_install = false,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = true,
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+
+" Find files using Telescope command-line sugar.
+nnoremap <Space>f <cmd>Telescope find_files<cr>
+nnoremap <Space>g <cmd>Telescope live_grep<cr>
