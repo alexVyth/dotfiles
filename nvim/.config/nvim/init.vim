@@ -167,8 +167,8 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 "spell on tex
 let g:tex_flavor = "latex"
-au FileType tex setlocal spell spelllang=el,en_us
-au BufNewFile,BufRead *.tex setlocal spell spelllang=el,en_us
+au FileType tex setlocal spell spelllang=elof,en_us
+au BufNewFile,BufRead *.tex setlocal spell spelllang=elof,en_us
 
 "resize vim windows on host resize
 au VimResized * wincmd =
@@ -179,17 +179,14 @@ let g:indentLine_char='▏'
 " tsconfig.json is actually jsonc, help TypeScript set the correct filetype
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
-" Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" TypeScript key bindings
-nmap <F2> :Prettier<cr>
+" coc commands key binding
+nmap <F2> :CocCommand editor.action.formatDocument<cr>
 nmap <Space>t :CocCommand explorer<cr>
 
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "bash", "css", "html", "javascript", "json", "jsonc", "python", "toml", "typescript", "vim", "yaml" },
+  ensure_installed = { "bash", "css", "html", "javascript", "json", "jsonc", "python", "toml", "typescript", "vim", "yaml", "latex", "bibtex"},
   sync_install = false,
 
   highlight = {
