@@ -22,8 +22,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias vless='/usr/share/nvim/runtime/macros/less.sh'
 alias bt='bluetoothctl'
-alias yayi='yay -Slq | fzf --multi --preview "yay -Si {1}" | xargs -ro yay -S'
-alias yayr='yay -Qq | fzf --multi --preview "yay -Qi {1}" | xargs -ro yay -Rns'
 
 
 # Change cursor shape for different vi modes.
@@ -52,11 +50,8 @@ fpath+=~/.zsh/functions
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PSQL_PAGER="pspg"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-alias pomo="i3-gnome-pomodoro"
-source /etc/profile.d/google-cloud-sdk.sh
