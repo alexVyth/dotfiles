@@ -141,7 +141,7 @@ exec_always --no-startup-id pkill dunst; dunst
 
 exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id alacritty'
 exec --no-startup-id i3-msg 'workspace 1; exec --no-startup-id alacritty'
-exec --no-startup-id picom
+exec --no-startup-id picom -b
 exec --no-startup-id numlockx
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id signal-desktop
