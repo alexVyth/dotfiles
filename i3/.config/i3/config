@@ -78,11 +78,6 @@ bindsym $mod+o exec --no-startup-id $HOME/.toggle_touchpad.sh
 
 bindsym $mod+p exec --no-startup-id bwmenu --auto-lock -1 -c 15
 
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
-bindsym mod4+equal exec --no-startup-id light -A 5
-bindsym mod4+minus exec --no-startup-id light -U 5
-
 bindsym Print exec --no-startup-id scrot '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 bindsym Shift+Print exec --no-startup-id "scrot -a $(slop -f '%x,%y,%w,%h') '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'"
 
