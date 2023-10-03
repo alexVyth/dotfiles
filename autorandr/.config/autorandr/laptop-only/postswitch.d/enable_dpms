@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'Xft.dpi: 96' | xrdb
+xset s on +dpms
+pkill dunst; dunst
