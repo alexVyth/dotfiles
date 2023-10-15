@@ -9,7 +9,8 @@ DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="false"
 
 plugins=(vi-mode fzf poetry docker docker-compose dotenv gcloud
-        gh kubectl mongocli pip autojump)
+        gh kubectl mongocli pip)
+eval "$(zoxide init zsh)"
 
 export PATH=~/.local/bin:$PATH
 export FZF_BASE=/usr/bin/fzf
