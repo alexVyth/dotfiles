@@ -22,7 +22,7 @@ require("lazy").setup({
         "junegunn/fzf.vim",
         "norcalli/nvim-colorizer.lua",
         "tpope/vim-fugitive",
-        "airblade/vim-gitgutter",
+        "lewis6991/gitsigns.nvim",
         "tpope/vim-eunuch",
         "lukas-reineke/indent-blankline.nvim",
         "rbgrouleff/bclose.vim",
@@ -107,7 +107,11 @@ require 'nvim-treesitter.configs'.setup {
         }
 }
 
-require "octo".setup()
+require "octo".setup({
+  use_local_fs = true,
+})
+
+require('gitsigns').setup()
 
 -- Resize Vim windows on host resize
 vim.cmd('autocmd VimResized * wincmd =')
