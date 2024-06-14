@@ -1,3 +1,0 @@
-#!/bin/sh
-echo 'Xft.dpi: 168' | xrdb
-pkill dunst; dunst
