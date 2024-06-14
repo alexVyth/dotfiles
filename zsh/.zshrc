@@ -1,58 +1,42 @@
-ZSH=/usr/share/oh-my-zsh/
+# Add local bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Path to Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
 
+# Set theme and source Powerlevel10k configuration if it exists
 ZSH_THEME="powerlevel10k/powerlevel10k"
-DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="false"
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-plugins=(vi-mode fzf poetry docker docker-compose dotenv gcloud
-        gh kubectl mongocli pip)
-eval "$(zoxide init zsh)"
+# Enable vi mode cursor setting
+export VI_MODE_SET_CURSOR=true
 
-export PATH=~/.local/bin:$PATH
-export FZF_BASE=/usr/bin/fzf
-source ~/.zsh_pass
+# Plugins
+plugins=(
+  vi-mode
+  fzf
+  docker-compose
+  zsh-completions
+  zsh-syntax-highlighting
+  zoxide
+)
 
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Source Oh My Zsh
+source "$ZSH/oh-my-zsh.sh"
 
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# Aliases
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
 alias vless='/usr/share/nvim/runtime/macros/less.sh'
 alias bt='bluetoothctl'
+alias ptest='docker-compose exec api py.test -vv -s'
+alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
+eval "$(gh copilot alias -- zsh)"
 
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-fpath+=~/.zsh/functions
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
+# Pyenv configuration
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+# GKE GCloud Auth Plugin
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
