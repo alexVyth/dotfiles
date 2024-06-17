@@ -40,6 +40,3 @@ eval "$(pyenv init -)"
 
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-
-# Set envvars for devices
-export BATTERY="$(ls /sys/class/power_supply/ | grep -E '^BAT[0-9]+')"
