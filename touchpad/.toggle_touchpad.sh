@@ -1,6 +1,7 @@
 #! /bin/zsh
 
-device="SynPS/2 Synaptics TouchPad"
+device=$(xinput list | grep -i "touchpad" | grep -oP 'id=\K\d+')
+
 enabled=$(xinput --list-props "$device" | grep "Device Enabled" | awk '{print $NF}')
 
 if [[ "$enabled" == "1" ]]; then
