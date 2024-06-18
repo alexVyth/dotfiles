@@ -34,3 +34,6 @@ eval "$(gh copilot alias -- zsh)"
 
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# Initialize pyenv
+eval "$(pyenv init -)"
