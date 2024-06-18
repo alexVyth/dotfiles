@@ -32,11 +32,5 @@ alias ptest='docker-compose exec api py.test -vv -s'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
 eval "$(gh copilot alias -- zsh)"
 
-# Pyenv configuration
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
