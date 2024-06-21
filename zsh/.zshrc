@@ -30,7 +30,6 @@ alias vless='/usr/share/nvim/runtime/macros/less.sh'
 alias bt='bluetoothctl'
 alias ptest='docker-compose exec api py.test -vv -s'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
-eval "$(gh copilot alias -- zsh)"
 
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
