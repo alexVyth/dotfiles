@@ -133,19 +133,14 @@ assign [app_id="com.viber.Viber"] $ws3
 assign [class="Slack"] $ws3
 
 # autostart
-exec_always autorandr --change
+exec_always autotiling
 exec waybar
 input * {
     xkb_layout us,gr
     xkb_options grp:caps_toggle
 }
-exec_always autotiling
-exec_always pkill dunst; dunst
+exec dunst
 
 exec swaymsg 'workspace 1; exec alacritty'
 exec swaymsg 'workspace 1; exec alacritty'
-exec clipmenud
 exec google-chrome-stable
-exec blueman-applet
-exec cbatticon
-exec redshift

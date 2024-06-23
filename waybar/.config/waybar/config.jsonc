@@ -1,5 +1,4 @@
 {
-  // Global configuration
   "layer": "top",
   "position": "top",
   "height": 25,
@@ -23,12 +22,14 @@
     "clock",
     "tray"
   ],
-  // -------------------------------------------------------------------------
-  // Modules
-  // -------------------------------------------------------------------------
   "sway/language": {
-    "format": "{}",
+    "format": "  {}",
     "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+  },
+  "backlight": {
+    "format": "  {}%",
+    "on-click": "brightnessctl s +5%",
+    "on-click-right": "brightnessctl s 5%-"
   },
   "mpris": {
     "format": "{artist} - {title}",
@@ -40,16 +41,14 @@
       "warning": 30,
       "critical": 15
     },
-    // Connected to AC
-    "format": "  {icon}  {capacity}%", // Icon: bolt
-    // Not connected to AC
+    "format": "  {icon}  {capacity}%",
     "format-discharging": "{icon}  {capacity}%",
     "format-icons": [
-      "", // Icon: battery-full
-      "", // Icon: battery-three-quarters
-      "", // Icon: battery-half
-      "", // Icon: battery-quarter
-      "" // Icon: battery-empty
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     "tooltip": true
   },
@@ -60,12 +59,12 @@
   },
   "clock#date": {
     "interval": 10,
-    "format": "  {:%e %b %Y}", // Icon: calendar-alt
+    "format": "  {:%e %b %Y}",
     "tooltip-format": "{:%e %B %Y}"
   },
   "cpu": {
     "interval": 5,
-    "format": "  {usage}% ({load})", // Icon: microchip
+    "format": "  {usage}% ({load})",
     "states": {
       "warning": 70,
       "critical": 90
@@ -73,7 +72,7 @@
   },
   "memory": {
     "interval": 5,
-    "format": "  {}%", // Icon: memory
+    "format": "  {}%",
     "states": {
       "warning": 70,
       "critical": 90
@@ -81,13 +80,13 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-    "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "  {ifname}: {ipaddr}/{cidr}",
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}"
   },
   "sway/mode": {
-    "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+    "format": "<span style=\"italic\">  {}</span>",
     "tooltip": false
   },
   "sway/window": {
@@ -99,18 +98,17 @@
     "disable-scroll": false,
     "format": "{name}",
     "format-icons": {
-      "1:www": "龜", // Icon: firefox-browser
-      "2:mail": "", // Icon: mail
-      "3:editor": "", // Icon: code
-      "4:terminals": "", // Icon: terminal
-      "5:portal": "", // Icon: terminal
+      "1:www": "龜",
+      "2:mail": "",
+      "3:editor": "",
+      "4:terminals": "",
+      "5:portal": "",
       "urgent": "",
       "focused": "",
       "default": ""
     }
   },
   "pulseaudio": {
-    //"scroll-step": 1,
     "format": "{icon}  {volume}%",
     "format-bluetooth": "{icon}  {volume}%",
     "format-muted": "",
@@ -133,11 +131,11 @@
     "interval": 5,
     "format": "{icon}  {temperatureC}°C",
     "format-icons": [
-      "", // Icon: temperature-empty
-      "", // Icon: temperature-quarter
-      "", // Icon: temperature-half
-      "", // Icon: temperature-three-quarters
-      "" // Icon: temperature-full
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     "tooltip": true
   },
