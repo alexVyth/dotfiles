@@ -79,10 +79,10 @@ input type:touchpad {
     natural_scroll disabled
 }
 
-bindsym XF86MonBrightnessUp exec light -s sysfs/backlight/intel_backlight -A 5
-bindsym XF86MonBrightnessDown exec light -s sysfs/backlight/intel_backlight -U 5
-bindsym mod4+equal exec light -s sysfs/backlight/intel_backlight -A 5
-bindsym mod4+minus exec light -s sysfs/backlight/intel_backlight -U 5
+bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym mod4+equal exec brightnessctl s +5%
+bindsym mod4+minus exec brightnessctl s 5%-
 
 bindsym Print exec grimshot savecopy output
 bindsym Shift+Print exec grimshot savecopy anything
