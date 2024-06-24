@@ -140,6 +140,7 @@ input * {
     xkb_options grp:caps_toggle
 }
 exec dunst
+exec gammastep
 
 exec swaymsg 'workspace 1; exec alacritty'
 exec swaymsg 'workspace 1; exec alacritty'
