@@ -146,3 +146,5 @@ exec wl-paste --watch cliphist store
 exec swaymsg 'workspace 1; exec alacritty'
 exec swaymsg 'workspace 1; exec alacritty'
 exec google-chrome-stable
+
+include /etc/sway/config.d/*
