@@ -16,8 +16,8 @@
   ],
   "modules-right": [
     "sway/language",
-    "backlight",
     "pulseaudio",
+    "backlight",
     "battery",
     "network",
     "clock",
