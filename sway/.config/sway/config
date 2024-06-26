@@ -135,9 +135,9 @@ mode "resize" {
 
 # window rules
 assign [app_id="google-chrome"] $ws2
-assign [class="Signal"] $ws3
+assign [app_id="signal"] $ws3
 assign [app_id="com.viber.Viber"] $ws3
-assign [class="Slack"] $ws3
+assign [app_id="Slack"] $ws3
 
 # autostart
 exec_always autotiling
