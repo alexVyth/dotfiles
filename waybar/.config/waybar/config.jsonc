@@ -15,6 +15,7 @@
     "memory"
   ],
   "modules-right": [
+    "idle_inhibitor",
     "sway/language",
     "pulseaudio",
     "backlight",
@@ -23,8 +24,15 @@
     "clock",
     "tray"
   ],
+  "idle_inhibitor": {
+    "format": "{icon}  ",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
   "sway/language": {
-    "format": "  {}",
+    "format": "   {}",
     "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
   },
   "backlight": {
