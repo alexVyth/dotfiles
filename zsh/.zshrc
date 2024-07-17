@@ -26,7 +26,6 @@ source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
-alias vless='/usr/share/nvim/runtime/macros/less.sh'
 alias bt='bluetoothctl'
 alias ptest='docker-compose exec api py.test -vv -s'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
