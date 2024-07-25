@@ -140,7 +140,8 @@ assign [app_id="com.viber.Viber"] $ws3
 assign [app_id="Slack"] $ws3
 
 # autostart
-exec_always autotiling
+exec kanshi
+exec autotiling
 exec waybar
 input * {
     xkb_layout us,gr
