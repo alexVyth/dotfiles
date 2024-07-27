@@ -104,8 +104,7 @@ bindsym --to-code $mod+shift+s exec playerctl play-pause
 bindsym --to-code $mod+shift+n exec playerctl next
 bindsym --to-code $mod+shift+p exec playerctl previous
 
-bindsym control+shift+space exec dunstctl close
-bindsym control+grave exec dunstctl history-pop
+bindsym $mod+grave exec swaync-client -t -sw
 bindsym --to-code --release Mod4+l exec swaylock --color 000000
 bindsym --to-code $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
@@ -147,7 +146,7 @@ input * {
     xkb_layout us,gr
     xkb_options grp:caps_toggle
 }
-exec dunst
+exec swaync
 exec gammastep
 exec wl-paste --watch cliphist store
 
