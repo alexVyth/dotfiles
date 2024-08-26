@@ -27,7 +27,7 @@ source "$ZSH/oh-my-zsh.sh"
 # Aliases
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
 alias bt='bluetoothctl'
-alias ptest='docker-compose exec api py.test -vv -s'
+alias ptest='docker-compose exec api py.test -vv -s --allow-hosts=localhost,redis'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
 
 # GKE GCloud Auth Plugin
