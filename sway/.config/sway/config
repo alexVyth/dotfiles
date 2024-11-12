@@ -66,7 +66,7 @@ bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 bindsym --to-code $mod+d exec rofi -show run
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -150,8 +150,8 @@ exec swaync
 exec gammastep
 exec wl-paste --watch cliphist store
 
-exec swaymsg 'workspace 1; exec alacritty'
-exec swaymsg 'workspace 1; exec alacritty'
+exec swaymsg 'workspace 1; exec foot'
+exec swaymsg 'workspace 1; exec foot'
 exec google-chrome-stable
 
 include /etc/sway/config.d/*
