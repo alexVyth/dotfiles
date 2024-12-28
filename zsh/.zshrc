@@ -23,6 +23,7 @@ plugins=(
 
 # Source Oh My Zsh
 source "$ZSH/oh-my-zsh.sh"
+zstyle ':omz:update' mode auto
 
 # Aliases
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
