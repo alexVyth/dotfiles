@@ -30,6 +30,8 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"
 alias bt='bluetoothctl'
 alias ptest='docker-compose exec api py.test -vv -s --allow-hosts=localhost,redis'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
+alias ls='eza -l --icons --group-directories-first'
+alias cat='bat'
 
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
