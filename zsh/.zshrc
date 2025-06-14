@@ -4,10 +4,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Path to Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set theme and source Powerlevel10k configuration if it exists
-ZSH_THEME="powerlevel10k/powerlevel10k"
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
 # Enable vi mode cursor setting
 export VI_MODE_SET_CURSOR=true
 
@@ -39,3 +35,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # Initialize pyenv
 eval "$(pyenv init -)"
 CLOUDSDK_PYTHON=python3.9
+
+# Enable starship prompt
+eval "$(starship init zsh)"
