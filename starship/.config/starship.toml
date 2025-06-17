@@ -1,0 +1,30 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[battery]
+disabled = true
+
+[netns]
+disabled = true
+
+[git_status]
+style = 'bold green'
+ahead = '[⇡$count](green)'
+behind = '[⇣$count](red)'
+diverged = '[⇕⇡$ahead_count⇣$behind_count](purple)'
+staged = '[+$count](green)'
+stashed = '[💰$count](cyan)'
+modified = '[!$count](red)'
+untracked = '[?$count](blue)'
+deleted = '[-$count](red)'
