@@ -34,7 +34,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Initialize pyenv
 eval "$(pyenv init -)"
-CLOUDSDK_PYTHON=python3.9
 
 # Enable starship prompt
 eval "$(starship init zsh)"
