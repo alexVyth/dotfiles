@@ -1,3 +1,7 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Add local bin to PATH
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -35,5 +39,6 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # Initialize pyenv
 eval "$(pyenv init -)"
 
-# Enable starship prompt
-eval "$(starship init zsh)"
+# Enable powerlevel10 theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
