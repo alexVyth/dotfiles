@@ -32,6 +32,7 @@ alias ptest='docker-compose exec api py.test -vv -s --allow-hosts=localhost,redi
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
 alias ls='eza -l --icons --group-directories-first'
 alias cat='bat'
+alias yay='yay --noconfirm'
 
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
