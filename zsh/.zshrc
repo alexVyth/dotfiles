@@ -28,7 +28,7 @@ zstyle ':omz:update' mode auto
 # Aliases
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
 alias bt='bluetoothctl'
-alias ptest='docker-compose exec api py.test -vv -s --allow-hosts=localhost,redis'
+alias ptest='LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH" poetry run pytest'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
 alias ls='eza -l --icons --group-directories-first'
 alias cat='bat'
