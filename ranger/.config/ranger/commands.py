@@ -7,7 +7,7 @@
 # A simple command for demonstration purposes follows.
 # -----------------------------------------------------------------------------
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
 
 # You can import any python module as needed.
 import os
@@ -65,7 +65,7 @@ class my_edit(Command):
 
 class extract_here(Command):
     def execute(self):
-        """ extract selected files to current directory."""
+        """extract selected files to current directory."""
         cwd = self.fm.thisdir
         marked_files = tuple(cwd.get_selection())
 
@@ -76,28 +76,29 @@ class extract_here(Command):
         one_file = marked_files[0]
         cwd = self.fm.thisdir
         original_path = cwd.path
-        au_flags = ['-x', cwd.path]
+        au_flags = ["-x", cwd.path]
         au_flags += self.line.split()[1:]
-        au_flags += ['-e']
+        au_flags += ["-e"]
 
         self.fm.copy_buffer.clear()
         self.fm.cut_buffer = False
         if len(marked_files) == 1:
             descr = "extracting: " + os.path.basename(one_file.path)
         else:
-            descr = "extracting files from: " + os.path.basename(
-                one_file.dirname)
-        obj = CommandLoader(args=['aunpack'] + au_flags
-                            + [f.path for f in marked_files], descr=descr,
-                            read=True)
+            descr = "extracting files from: " + os.path.basename(one_file.dirname)
+        obj = CommandLoader(
+            args=["aunpack"] + au_flags + [f.path for f in marked_files],
+            descr=descr,
+            read=True,
+        )
 
-        obj.signal_bind('after', refresh)
+        obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
 
 
 class compress(Command):
     def execute(self):
-        """ Compress marked files to current directory """
+        """Compress marked files to current directory"""
         cwd = self.fm.thisdir
         marked_files = cwd.get_selection()
 
@@ -113,14 +114,22 @@ class compress(Command):
         au_flags = parts[1:]
 
         descr = "compressing files in: " + os.path.basename(parts[1])
-        obj = CommandLoader(args=['apack'] + au_flags + \
-                [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr, read=True)
+        obj = CommandLoader(
+            args=["apack"]
+            + au_flags
+            + [os.path.relpath(f.path, cwd.path) for f in marked_files],
+            descr=descr,
+            read=True,
+        )
 
-        obj.signal_bind('after', refresh)
+        obj.signal_bind("after", refresh)
         self.fm.loader.add(obj)
 
     def tab(self, tabnum):
-        """ Complete with current folder name """
+        """Complete with current folder name"""
 
-        extension = ['.zip', '.tar.gz', '.rar', '.7z']
-        return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
+        extension = [".zip", ".tar.gz", ".rar", ".7z"]
+        return [
+            "compress " + os.path.basename(self.fm.thisdir.path) + ext
+            for ext in extension
+        ]
