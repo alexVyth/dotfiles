@@ -26,7 +26,6 @@ source "$ZSH/oh-my-zsh.sh"
 zstyle ':omz:update' mode auto
 
 # Aliases
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(<"$HOME/.rangerdir"); cd "$LASTDIR"'
 alias bt='bluetoothctl'
 alias ptest='LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH" poetry run pytest'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
