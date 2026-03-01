@@ -141,7 +141,6 @@ assign [app_id="Slack"] $ws3
 # autostart
 exec kanshi
 exec autotiling
-exec waybar
 input * {
     xkb_layout us,gr
     xkb_options grp:caps_toggle
