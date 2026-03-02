@@ -27,7 +27,7 @@ zstyle ':omz:update' mode auto
 
 # Aliases
 alias bt='bluetoothctl'
-alias ptest='LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH" poetry run pytest'
+alias ptest='TZ=UTC LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH" poetry run pytest'
 alias runpod="$HOME/code/plum/infra/opsbox/runpod/run.sh"
 alias ls='eza -l --icons --group-directories-first'
 alias cat='bat'
