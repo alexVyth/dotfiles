@@ -33,6 +33,15 @@ alias ls='eza -l --icons --group-directories-first'
 alias cat='bat'
 alias yay='yay --noconfirm'
 
+# yazi change directory when exiting
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 # GKE GCloud Auth Plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
