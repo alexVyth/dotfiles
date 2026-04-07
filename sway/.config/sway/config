@@ -148,6 +148,7 @@ input * {
 exec swaync
 exec gammastep
 exec wl-paste --watch cliphist store
+exec swaybg -i ~/.config/sway/wallpaper.png -m fill
 
 exec swaymsg 'workspace 1; exec foot'
 exec swaymsg 'workspace 1; exec foot'
