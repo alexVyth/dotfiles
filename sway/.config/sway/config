@@ -132,6 +132,12 @@ mode "resize" {
         bindsym --to-code q mode "default"
 }
 
+# output config
+output DP-1 {
+    render_bit_depth 10
+    hdr off
+}
+
 # window rules
 assign [app_id="google-chrome"] $ws2
 assign [app_id="signal"] $ws3
