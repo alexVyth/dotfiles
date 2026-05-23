@@ -6,7 +6,7 @@ exec swayidle -w \
     before-sleep 'swaylock -f -c 000000'
 
 # options
-set $mod Mod1
+set $mod mod4
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -105,7 +105,7 @@ bindsym --to-code $mod+shift+n exec playerctl next
 bindsym --to-code $mod+shift+p exec playerctl previous
 
 bindsym $mod+grave exec swaync-client -t -sw
-bindsym --to-code --release Mod4+l exec swaylock --color 000000
+bindsym --to-code --release mod1+l exec swaylock --color 000000
 bindsym --to-code $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 # wm colors
